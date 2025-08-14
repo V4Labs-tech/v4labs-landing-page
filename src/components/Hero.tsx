@@ -36,7 +36,7 @@ const Hero = () => {
         </button>
       </section>
 
-      <div className="mt-16 mb-16 w-full max-w-[50rem] h-auto aspect-video rounded-lg overflow-hidden z-10 shadow-2xl shadow-primary/20">
+      <div className="mt-16 mb-16 w-full max-w-[50rem] h-auto aspect-video rounded-lg overflow-hidden z-10">
         <video
           src="/v4labs.mp4"
           autoPlay
