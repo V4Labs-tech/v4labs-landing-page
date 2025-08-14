@@ -24,7 +24,7 @@ export default function ServicesSection() {
       <DotBackground>
         <section className="w-full pt-8 pb-14 px-6 flex flex-col items-center">
           {/* Steps Section */}
-          <h2 className="m-10 text-2xl font-semibold text-center text-white">
+          <h2 className="m-10 text-2xl font-semibold text-center text-white z-50">
             From Idea to MVP — In Just 3 Weeks
           </h2>
 
