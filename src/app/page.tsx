@@ -1,6 +1,5 @@
 // app/page.tsx (or pages/index.tsx if not using App Router)
 import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import PrincingSection from "@/components/Pricing-section";
 import ServicesSection from "@/components/Services-section";
@@ -14,7 +13,6 @@ export default function Home() {
       <ServicesSection />
       <PrincingSection />
       <Contact/>
-      <Footer/>
     </main>
   );
 }
