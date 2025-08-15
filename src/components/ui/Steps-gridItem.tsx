@@ -4,14 +4,20 @@ import { Lightbulb, Layout, Code2, Rocket, Repeat } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const stepIcons = [
-  <Lightbulb className="w-6 h-6" />,
-  <Layout className="w-6 h-6" />,
-  <Code2 className="w-6 h-6" />,
-  <Rocket className="w-6 h-6" />,
-  <Repeat className="w-6 h-6" />,
+  <Lightbulb key="lightbulb" className="w-6 h-6" />,
+  <Layout key="layout" className="w-6 h-6" />,
+  <Code2 key="code2" className="w-6 h-6" />,
+  <Rocket key="rocket" className="w-6 h-6" />,
+  <Repeat key="repeat" className="w-6 h-6" />,
 ];
 
-export const GridItem = ({ icon, title, description }: any) => {
+interface GridItemProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+export const GridItem = ({ icon, title, description }: GridItemProps) => {
   return (
     <li className="list-none mb-2 w-full">
       <div className="relative w-full rounded-2xl bg-[#040405] md:rounded-3xl">

@@ -12,17 +12,18 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, calUser })
     return null;
   }
 
+  // UPDATED: The meetingDurations array now includes the specific URL path for each meeting.
   const meetingDurations = [
-    { duration: 15, text: "15 Minute Quick Chat" },
-    { duration: 30, text: "30 Minute Discovery Call" },
-    { duration: 45, text: "45 Minute Strategy Session" },
-    { duration: 60, text: "60 Minute Consultation" },
+    { text: "15 Minute Quick Chat", path: "15min" },
+    { text: "30 Minute Discovery Call", path: "30min" },
+    { text: "45 Minute Strategy Session", path: "mid-duration" },
+    { text: "60 Minute Consultation", path: "long-duration" },
   ];
 
   return (
     // Backdrop
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-blur backdrop-blur-md"
       onClick={onClose} // Close modal when clicking the backdrop
     >
       {/* Modal Content */}
@@ -47,8 +48,9 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, calUser })
         <div className="flex flex-col space-y-4">
           {meetingDurations.map((meeting) => (
             <Link
-              key={meeting.duration}
-              href={`https://cal.com/${calUser}/${meeting.duration}min`}
+              key={meeting.path} // Use path as key since it's unique
+              // UPDATED: The href now uses the specific path for each meeting.
+              href={`https://cal.com/${calUser}/${meeting.path}`}
               target="_blank" // Open in a new tab
               rel="noopener noreferrer"
               className="block w-full text-center bg-primary hover:bg-opacity-90 text-gray-900 font-semibold px-6 py-3 rounded-xl transition-all duration-300 transform hover:scale-105"
