@@ -16,7 +16,7 @@ const Hero = () => {
       {/* All content is now a sibling to the background, and will render on top */}
       <section className="text-center mt-20 max-w-2xl z-10">
         <div className="mb-8">
-          <h1 className="text-5xl font-semibold leading-snug text-white">
+          <h1 className="text-3xl  md:text-5xl font-semibold leading-snug text-white">
             From Vision To Version , We’re Your <Highlight className="">
               Tech Team
             </Highlight>
@@ -24,7 +24,7 @@ const Hero = () => {
           <p className="mt-4 text-md text-gray-400">
             Get a full-stack team to build and maintain your product from idea to
             launch and beyond. <br />
-            We’re here to build your dream, not own it
+            We’re here to build your dream.
           </p>
         </div>
 
@@ -36,7 +36,7 @@ const Hero = () => {
         </button>
       </section>
 
-      <div className="mt-16 mb-16 w-full max-w-[50rem] h-auto aspect-video rounded-lg overflow-hidden z-10">
+      <div className="mt-16 mb-6 w-full max-w-[50rem] h-auto aspect-video rounded-lg overflow-hidden z-10 ">
         <video
           src="/v4labs.mp4"
           autoPlay

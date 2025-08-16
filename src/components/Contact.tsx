@@ -32,11 +32,11 @@ const Contact = () => {
     }
   };
   return (
-    <div className="w-full min-h-[80vh] bg-black text-white flex items-center justify-center px-10 md:px-20 py-16">
+    <div id="contact" className="w-full  min-h-[80vh] bg-black text-white flex items-center justify-center  md:px-20 mb-14">
       <div className="flex flex-col md:flex-row w-full max-w-6xl gap-12 ">
         {/* Left text section */}
         <div className="relative flex-1 flex flex-col justify-center h-[60vh]">
-          <BackgroundLines className="flex items-center justify-center w-full flex-col px-4 bg-[#0f0f0f]">
+          <BackgroundLines className="flex items-center justify-center w-full flex-col px-4 bg-black">
             <h2 className="text-3xl font-bold mb-6 ">Let’s Connect</h2>
             <p className="text-gray-300 text-lg leading-relaxed ">
               We are happy to assist you with any questions about our

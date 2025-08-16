@@ -10,11 +10,11 @@ const Header = () => {
   const calUsername = "v4labs";
 
   const navLinks = [
-    { name: "Why Us", href: "#why-us" },
+    { name: "Why Us", href: "#about" },
     { name: "Services", href: "#services" },
-    { name: "Our Work", href: "#work" }, // Changed from "Products"
+    // { name: "Our Work", href: "#work" }, // Changed from "Products"
     { name: "Pricing", href: "#pricing" },
-    { name: "Company", href: "#company" },
+    { name: "Company", href: "#about" },
   ];
 
   // Effect to handle scroll detection
@@ -42,7 +42,7 @@ const Header = () => {
 
   return (
     <>
-      <header className={`sticky top-0 z-40 w-full transition-all duration-300 ${isScrolled ? 'bg-[#0B0B0B]/80 backdrop-blur-lg border-b border-gray-800' : 'bg-transparent'}`}>
+      <header className={`sticky top-0 z-40 w-full transition-all duration-300 ${isScrolled ? 'bg-[#0B0B0B]/80 backdrop-blur-lg mask-b-from-80%' : 'bg-transparent'}`}>
         <div className="px-6 md:px-12 lg:px-24">
           {/* Navbar */}
           <nav className="w-full flex justify-between items-center py-4">
@@ -67,7 +67,7 @@ const Header = () => {
             {/* Right CTA Button */}
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-primary text-gray-900 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-all cursor-pointer"
+              className="bg-primary text-gray-900 px-4 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all cursor-pointer"
             >
               Book a call
             </button>

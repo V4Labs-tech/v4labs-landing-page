@@ -3,11 +3,16 @@ import React from 'react';
 import type { ComponentProps, ReactNode } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { FacebookIcon, FrameIcon, InstagramIcon, LinkedinIcon, YoutubeIcon } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { FaInstagram } from 'react-icons/fa';
+
 
 interface FooterLink {
-    title: string;
+    title: string|ReactNode;
     href: string;
     icon?: React.ComponentType<{ className?: string }>;
+    key:string
 }
 
 interface FooterSection {
@@ -17,71 +22,58 @@ interface FooterSection {
 
 const footerLinks: FooterSection[] = [
     {
-        label: 'Product',
-        links: [
-            { title: 'Features', href: '#features' },
-            { title: 'Pricing', href: '#pricing' },
-            { title: 'Testimonials', href: '#testimonials' },
-            { title: 'Integration', href: '/' },
-        ],
-    },
-    {
         label: 'Company',
         links: [
-            { title: 'FAQs', href: '/faqs' },
-            { title: 'About Us', href: '/about' },
-            { title: 'Privacy Policy', href: '/privacy' },
-            { title: 'Terms of Services', href: '/terms' },
+            { title: 'About Us', href: '#about' ,key:'1'},
+            { title: 'Services', href: '#services',key:'2' },
+            { title: 'Contact', href: '#contact' ,key:'3'},
         ],
     },
     {
-        label: 'Resources',
+        label: 'Socials',
         links: [
-            { title: 'Blog', href: '/blog' },
-            { title: 'Changelog', href: '/changelog' },
-            { title: 'Brand', href: '/brand' },
-            { title: 'Help', href: '/help' },
+            { title: 'X', href: 'https://x.com/V4Labs' ,key:'4'},
+            { title: <FaInstagram size={20} /> , href: 'https://www.instagram.com/v4labs/',key:'5' },
         ],
     },
     {
-        label: 'Social Links',
+        label: 'Legal',
         links: [
-            { title: 'Facebook', href: '#', icon: FacebookIcon },
-            { title: 'Instagram', href: '#', icon: InstagramIcon },
-            { title: 'Youtube', href: '#', icon: YoutubeIcon },
-            { title: 'LinkedIn', href: '#', icon: LinkedinIcon },
+            { title: 'Terms of Service', href: '/terms' ,key:'6'},
+            { title: 'Privacy Policy', href: '/privacy',key:'7' },
         ],
     },
 ];
 
 export function Footer() {
     return (
-        // UPDATED: Removed `max-w-6xl` and `mx-auto` to make the footer full-width.
-        // Adjusted padding for better spacing on various screen sizes.
-        <footer className="md:rounded-t-6xl relative w-full flex flex-col items-center justify-center rounded-t-4xl border-t bg-[radial-gradient(35%_128px_at_50%_0%,theme(backgroundColor.white/8%),transparent)] px-6 sm:px-10 md:px-16 py-12 lg:py-16">
+        <footer className="text-white md:rounded-t-6xl relative w-full flex flex-col items-center justify-center rounded-t-4xl mask-t-from-90% bg-[radial-gradient(35%_128px_at_50%_0%,theme(backgroundColor.primary/20%),transparent)] px-6 sm:px-10 md:px-16 py-12 lg:py-16">
             <div className="bg-foreground/20 absolute top-0 right-1/2 left-1/2 h-px w-1/3 -translate-x-1/2 -translate-y-1/2 rounded-full blur" />
 
-            {/* Added a max-width container here to keep the content centered and readable */}
             <div className="w-full max-w-6xl">
-                <div className="grid w-full gap-8 xl:grid-cols-3 xl:gap-8">
+                <div className=" w-full flex flex-col justify-between gap-4 md:flex-row md:justify-between md:items-start">
+                    {/* Left: Logo */}
                     <AnimatedContainer className="space-y-4">
-                        <FrameIcon className="size-8" />
-                        <p className="text-muted-foreground mt-8 text-sm md:mt-0">
-                            © {new Date().getFullYear()} V4Labs. All rights reserved.
-                        </p>
+                        <Link
+              href="#"
+              className="text-lg font-semibold flex justify-center items-center gap-2"
+            >
+              <Image src={"/v4labs.svg"} alt="logo" width={36} height={36} />
+            </Link>
                     </AnimatedContainer>
 
-                    <div className="mt-10 grid grid-cols-2 gap-8 md:grid-cols-4 xl:col-span-2 xl:mt-0">
+                    {/* Middle Columns */}
+                    <div className="flex justify-between gap-x-18  w-full md:w-100">
                         {footerLinks.map((section, index) => (
                             <AnimatedContainer key={section.label} delay={0.1 + index * 0.1}>
-                                <div className="mb-10 md:mb-0">
+                                <div>
                                     <h3 className="text-xs">{section.label}</h3>
                                     <ul className="text-muted-foreground mt-4 space-y-2 text-sm">
                                         {section.links.map((link) => (
-                                            <li key={link.title}>
+                                            <li key={link.key}>
                                                 <a
                                                     href={link.href}
-                                                    className="hover:text-white inline-flex items-center transition-all duration-300"
+                                                    className="hover:text-primary inline-flex items-center transition-all duration-300"
                                                 >
                                                     {link.icon && <link.icon className="me-1 size-4" />}
                                                     {link.title}
@@ -94,10 +86,17 @@ export function Footer() {
                         ))}
                     </div>
                 </div>
+
+                {/* Bottom Copyright */}
+                <div className="mt-8">
+                    <p className="text-muted-foreground text-sm">
+                        © {new Date().getFullYear()} V4labs. All rights reserved.
+                    </p>
+                </div>
             </div>
         </footer>
     );
-};
+}
 
 type ViewAnimationProps = {
     delay?: number;

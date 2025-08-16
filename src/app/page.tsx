@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-start px-6 text-white">
+    <main  className="min-h-screen flex flex-col items-center justify-start px-6 text-white">
      
       <Hero/>
       <ServicesSection />

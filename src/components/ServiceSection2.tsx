@@ -44,14 +44,14 @@ const ServicesSection2 = () => {
     };
 
     return (
-        <div className="w-full">
-            <div className="min-h-screen w-full px-4 md:px-20 lg:px-40 pb-20">
+        <div className="w-full mt-20 md:mt-0" id="services">
+            <div className="min-h-screen w-full md:px-20 lg:px-40 pb-20">
                 <motion.h1
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.5 }}
                     transition={{ duration: 0.5 }}
-                    className="text-4xl lg:text-5xl font-bold text-center text-white"
+                    className="text-3xl lg:text-3xl font-bold text-center text-white"
                 >
                     Our Services
                 </motion.h1>

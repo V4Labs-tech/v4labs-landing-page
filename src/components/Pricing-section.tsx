@@ -1,9 +1,13 @@
+"use client"
 import { Check } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
+import BookingModal from "./ui/BookingModal";
 
 const PricingSection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+    const calUsername = "v4labs";
   return (
-    <div className="min-h-screen text-center w-full bg-black text-white py-16 px-6">
+    <div className="min-h-screen text-center w-full bg-black text-white mt-6 mb-16 px-6" id="pricing">
       <h1 className="text-3xl font-bold">Pricing Plans</h1>
       <p className="text-gray-400 text-lg mt-3 mb-10">
         We offer a range of pricing options to suit your needs
@@ -22,7 +26,7 @@ const PricingSection = () => {
               <li className="flex gap-3"><Check />AI Tools & Agents</li>
             </ul>
           </div>
-          <button className="mt-6 bg-purple-600 hover:bg-purple-700 transition rounded-lg py-3 px-6 font-medium">
+          <button  onClick={() => setIsModalOpen(true)} className="mt-6 bg-purple-600 hover:bg-purple-700 transition rounded-lg py-3 px-6 font-medium">
             Book a Call
           </button>
         </div>
@@ -41,7 +45,7 @@ const PricingSection = () => {
               <li className="flex gap-3"><Check /> Monitoring & Maintenance</li>
             </ul>
           </div>
-          <button className="mt-6 bg-purple-600 hover:bg-purple-700 transition rounded-lg py-3 px-6 font-medium">
+          <button  onClick={() => setIsModalOpen(true)} className="mt-6 bg-purple-600 hover:bg-purple-700 transition rounded-lg py-3 px-6 font-medium">
             Book a Call
           </button>
         </div>
@@ -58,11 +62,17 @@ const PricingSection = () => {
               <li className="flex gap-3"><Check />Scalable Solutions</li>
             </ul>
           </div>
-          <button className="mt-6 bg-purple-600 hover:bg-purple-700 transition rounded-lg py-3 px-6 font-medium">
+          <button  onClick={() => setIsModalOpen(true)} className="mt-6 bg-purple-600 hover:bg-purple-700 transition rounded-lg py-3 px-6 font-medium">
             Book a Call
           </button>
         </div>
       </div>
+        {/* Render the Modal */}
+      <BookingModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        calUser={calUsername}
+      />
     </div>
   );
 };

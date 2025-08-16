@@ -48,7 +48,7 @@ const steps = [
 
 export default function StepsSection() {
   return (
-    <ul className="w-2/4">
+    <ul className="w-full md:w-2/4">
       {steps.map((step, i) => (
         <GridItem
           key={i}
