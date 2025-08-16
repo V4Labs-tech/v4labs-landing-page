@@ -30,7 +30,7 @@ const footerLinks: FooterSection[] = [
   {
     label: "Socials",
     links: [
-      { title: "X", href: "https://x.com/V4Labs", key: "4" },
+      { title: <span className="text-muted-foregroun hover:text-primary pl-0.5 ">X</span>, href: "https://x.com/V4Labs", key: "4" },
       {
         title: <FaInstagram size={20} />,
         href: "https://www.instagram.com/v4labs/",
