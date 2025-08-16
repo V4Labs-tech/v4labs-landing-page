@@ -1,4 +1,5 @@
 // app/privacy-policy/page.tsx
+export const runtime = "edge";
 import React from "react";
 
 export default function PrivacyPolicyPage() {

@@ -1,4 +1,5 @@
 // app/page.tsx (or pages/index.tsx if not using App Router)
+"use client"
 import Contact from "@/components/Contact";
 import Hero from "@/components/Hero";
 import PrincingSection from "@/components/Pricing-section";

@@ -1,5 +1,4 @@
-// app/terms/page.tsx
-"use client";
+export const runtime = "edge";
 
 export default function TermsOfService() {
   return (
