@@ -1,8 +1,8 @@
-'use client';
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import BookingModal from "./ui/BookingModal"; 
+import BookingModal from "./ui/BookingModal";
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,16 +22,16 @@ const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   // Add Cal.com embed script for better integration (optional but recommended)
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://cal.com/embed.js';
+    const script = document.createElement("script");
+    script.src = "https://cal.com/embed.js";
     script.async = true;
     document.body.appendChild(script);
     return () => {
@@ -39,10 +39,15 @@ const Header = () => {
     };
   }, []);
 
-
   return (
     <>
-      <header className={`sticky top-0 z-40 w-full transition-all duration-300 ${isScrolled ? 'bg-[#0B0B0B]/80 backdrop-blur-lg mask-b-from-80%' : 'bg-transparent'}`}>
+      <header
+        className={`sticky top-0 z-40 w-full transition-all duration-300 ${
+          isScrolled
+            ? "bg-[#0B0B0B]/80 backdrop-blur-lg mask-b-from-80%"
+            : "bg-transparent"
+        }`}
+      >
         <div className="px-6 md:px-12 lg:px-24">
           {/* Navbar */}
           <nav className="w-full flex justify-between items-center py-4">
@@ -58,7 +63,11 @@ const Header = () => {
             {/* Center Nav Links - Hidden on mobile */}
             <div className="hidden md:flex gap-8 text-sm text-gray-300">
               {navLinks.map((item) => (
-                <Link href={item.href} key={item.name} className="hover:text-primary transition-colors">
+                <Link
+                  href={item.href}
+                  key={item.name}
+                  className="hover:text-primary transition-colors"
+                >
                   {item.name}
                 </Link>
               ))}

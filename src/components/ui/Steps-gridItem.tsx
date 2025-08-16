@@ -21,29 +21,45 @@ export const GridItem = ({ icon, title, description }: GridItemProps) => {
   return (
     <li className="list-none mb-2 w-full">
       <div className="relative w-full rounded-2xl bg-[#040405] md:rounded-3xl">
-        <GlowingEffect spread={40} glow={true} proximity={64} disabled={false} />
+        <GlowingEffect
+          spread={40}
+          glow={true}
+          proximity={64}
+          disabled={false}
+        />
         <div className=" relative flex h-24 flex-col justify-between rounded-xl p-6">
           <div className="flex items-center mb-0.5 gap-2">
-          <div className="w-fit rounded-lg">
-            {icon}
-          </div>
+            <div className="w-fit rounded-lg">{icon}</div>
             <h3 className="text-xl font-semibold">{title}</h3>
           </div>
-            <p className="text-sm text-gray-400">{description}</p>
+          <p className="text-sm text-gray-400">{description}</p>
         </div>
       </div>
     </li>
   );
 };
 
-
-
 const steps = [
-  { title: "Discovery Call", desc: "We understand your business idea and goals." },
-  { title: "Planning & Design", desc: "We wireframe the UI/UX and define the tech stack." },
-  { title: "Rapid Development", desc: "We build your MVP using modern, scalable tech." },
-  { title: "Launch", desc: "We deploy your app or site with end-to-end support." },
-  { title: "Iterate & Maintain", desc: "We continue to support and improve your product." },
+  {
+    title: "Discovery Call",
+    desc: "We understand your business idea and goals.",
+  },
+  {
+    title: "Planning & Design",
+    desc: "We wireframe the UI/UX and define the tech stack.",
+  },
+  {
+    title: "Rapid Development",
+    desc: "We build your MVP using modern, scalable tech.",
+  },
+  {
+    title: "Launch",
+    desc: "We deploy your app or site with end-to-end support.",
+  },
+  {
+    title: "Iterate & Maintain",
+    desc: "We continue to support and improve your product.",
+  },
 ];
 
 export default function StepsSection() {

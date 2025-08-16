@@ -6,7 +6,7 @@ export default function TermsOfService() {
     <div className="max-w-4xl mx-auto px-6 py-12 text-gray-200">
       <h1 className="text-3xl font-bold mb-6">Terms of Service</h1>
       <p className="mb-4">
-        These Terms and Conditions ("Terms") govern the use of services provided by{" "}
+        These Terms and Conditions (&quot;Terms&quot;) govern the use of services provided by{" "}
         <strong>V4Labs</strong>, a comprehensive software development business
         operated by four Indian college students, specializing in full-scale
         application development, ongoing technical support, and subscription-based
@@ -16,8 +16,8 @@ export default function TermsOfService() {
       {/* INTRODUCTION */}
       <h2 className="text-xl font-semibold mt-8 mb-2">1. INTRODUCTION AND DEFINITIONS</h2>
       <p className="mb-2">
-        <strong>V4Labs</strong> ("we," "us," "our") refers to the V4Labs business
-        and its operators. "Client," "you," "your" refers to the individual or
+        <strong>V4Labs</strong> (&quot;we,&quot; &quot;us,&quot; &quot;our&quot;) refers to the V4Labs business
+        and its operators. &quot;Client,&quot; &quot;you,&quot; &quot;your&quot; refers to the individual or
         entity engaging our services.
       </p>
       <ul className="list-disc pl-6 space-y-2">
@@ -92,7 +92,7 @@ export default function TermsOfService() {
       <ul className="list-disc pl-6 space-y-2">
         <li>Services delivered with skill & care</li>
         <li>We correct defects reported within 30 days</li>
-        <li>Beyond this, services are "as is"</li>
+        <li>Beyond this, services are &quot;as is&quot;</li>
       </ul>
 
       {/* LIMITATION OF LIABILITY */}

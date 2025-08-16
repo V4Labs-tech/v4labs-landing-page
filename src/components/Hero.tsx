@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState } from "react";
 import BookingModal from "./ui/BookingModal";
@@ -17,13 +17,12 @@ const Hero = () => {
       <section className="text-center mt-20 max-w-2xl z-10">
         <div className="mb-8">
           <h1 className="text-3xl  md:text-5xl font-semibold leading-snug text-white">
-            From Vision To Version , We’re Your <Highlight className="">
-              Tech Team
-            </Highlight>
+            From Vision To Version , We’re Your{" "}
+            <Highlight className="">Tech Team</Highlight>
           </h1>
           <p className="mt-4 text-md text-gray-400">
-            Get a full-stack team to build and maintain your product from idea to
-            launch and beyond. <br />
+            Get a full-stack team to build and maintain your product from idea
+            to launch and beyond. <br />
             We’re here to build your dream.
           </p>
         </div>

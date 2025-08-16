@@ -32,7 +32,10 @@ const Contact = () => {
     }
   };
   return (
-    <div id="contact" className="w-full  min-h-[80vh] bg-black text-white flex items-center justify-center  md:px-20 mb-14">
+    <div
+      id="contact"
+      className="w-full  min-h-[80vh] bg-black text-white flex items-center justify-center  md:px-20 mb-14"
+    >
       <div className="flex flex-col md:flex-row w-full max-w-6xl gap-12 ">
         {/* Left text section */}
         <div className="relative flex-1 flex flex-col justify-center h-[60vh]">

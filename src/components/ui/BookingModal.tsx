@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import React from 'react';
+import Link from "next/link";
+import React from "react";
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -7,7 +7,11 @@ interface BookingModalProps {
   calUser: string;
 }
 
-const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, calUser }) => {
+const BookingModal: React.FC<BookingModalProps> = ({
+  isOpen,
+  onClose,
+  calUser,
+}) => {
   if (!isOpen) {
     return null;
   }
@@ -22,7 +26,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, calUser })
 
   return (
     // Backdrop
-    <div 
+    <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-blur backdrop-blur-md"
       onClick={onClose} // Close modal when clicking the backdrop
     >
@@ -37,14 +41,29 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, calUser })
           className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
           aria-label="Close modal"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
           </svg>
         </button>
 
-        <h2 className="text-2xl font-bold text-white text-center mb-2">Select a Meeting Duration</h2>
-        <p className="text-gray-400 text-center mb-8">Choose the time that works best for you.</p>
-        
+        <h2 className="text-2xl font-bold text-white text-center mb-2">
+          Select a Meeting Duration
+        </h2>
+        <p className="text-gray-400 text-center mb-8">
+          Choose the time that works best for you.
+        </p>
+
         <div className="flex flex-col space-y-4">
           {meetingDurations.map((meeting) => (
             <Link

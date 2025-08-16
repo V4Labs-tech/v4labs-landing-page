@@ -1,13 +1,16 @@
-"use client"
+"use client";
 import { Check } from "lucide-react";
 import React, { useState } from "react";
 import BookingModal from "./ui/BookingModal";
 
 const PricingSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-    const calUsername = "v4labs";
+  const calUsername = "v4labs";
   return (
-    <div className="min-h-screen text-center w-full bg-black text-white mt-6 mb-16 px-6" id="pricing">
+    <div
+      className="min-h-screen text-center w-full bg-black text-white mt-6 mb-16 px-6"
+      id="pricing"
+    >
       <h1 className="text-3xl font-bold">Pricing Plans</h1>
       <p className="text-gray-400 text-lg mt-3 mb-10">
         We offer a range of pricing options to suit your needs
@@ -20,13 +23,27 @@ const PricingSection = () => {
             <h2 className="text-2xl font-semibold">Basic Plan</h2>
             <p className="text-purple-300 text-3xl font-bold mt-2">$699</p>
             <ul className="text-gray-300 mt-6 space-y-2 text-left">
-              <li className="flex gap-3"><Check /> MVP Building</li>
-              <li className="flex gap-3"><Check />Website</li>
-              <li className="flex gap-3"><Check />Mobile App</li>
-              <li className="flex gap-3"><Check />AI Tools & Agents</li>
+              <li className="flex gap-3">
+                <Check /> MVP Building
+              </li>
+              <li className="flex gap-3">
+                <Check />
+                Website
+              </li>
+              <li className="flex gap-3">
+                <Check />
+                Mobile App
+              </li>
+              <li className="flex gap-3">
+                <Check />
+                AI Tools & Agents
+              </li>
             </ul>
           </div>
-          <button  onClick={() => setIsModalOpen(true)} className="mt-6 bg-purple-600 hover:bg-purple-700 transition rounded-lg py-3 px-6 font-medium">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="mt-6 bg-purple-600 hover:bg-purple-700 transition rounded-lg py-3 px-6 font-medium"
+          >
             Book a Call
           </button>
         </div>
@@ -39,13 +56,25 @@ const PricingSection = () => {
               $699 + $299/mo
             </p>
             <ul className="text-gray-300 mt-6 space-y-2 text-left">
-              <li className="flex gap-3"><Check /> Everything in Basic</li>
-              <li className="flex gap-3"><Check /> Feature Development</li>
-              <li className="flex gap-3"><Check />Bug Fixes & Updates</li>
-              <li className="flex gap-3"><Check /> Monitoring & Maintenance</li>
+              <li className="flex gap-3">
+                <Check /> Everything in Basic
+              </li>
+              <li className="flex gap-3">
+                <Check /> Feature Development
+              </li>
+              <li className="flex gap-3">
+                <Check />
+                Bug Fixes & Updates
+              </li>
+              <li className="flex gap-3">
+                <Check /> Monitoring & Maintenance
+              </li>
             </ul>
           </div>
-          <button  onClick={() => setIsModalOpen(true)} className="mt-6 bg-purple-600 hover:bg-purple-700 transition rounded-lg py-3 px-6 font-medium">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="mt-6 bg-purple-600 hover:bg-purple-700 transition rounded-lg py-3 px-6 font-medium"
+          >
             Book a Call
           </button>
         </div>
@@ -56,18 +85,30 @@ const PricingSection = () => {
             <h2 className="text-2xl font-semibold">Custom Plan</h2>
             <p className="text-purple-300 text-3xl font-bold mt-2">Flexible</p>
             <ul className="text-gray-300 mt-6 space-y-2 text-left">
-              <li className="flex gap-3"><Check /> Tailored to Your Needs</li>
-              <li className="flex gap-3"><Check /> Custom Features</li>
-              <li className="flex gap-3"><Check /> Dedicated Support</li>
-              <li className="flex gap-3"><Check />Scalable Solutions</li>
+              <li className="flex gap-3">
+                <Check /> Tailored to Your Needs
+              </li>
+              <li className="flex gap-3">
+                <Check /> Custom Features
+              </li>
+              <li className="flex gap-3">
+                <Check /> Dedicated Support
+              </li>
+              <li className="flex gap-3">
+                <Check />
+                Scalable Solutions
+              </li>
             </ul>
           </div>
-          <button  onClick={() => setIsModalOpen(true)} className="mt-6 bg-purple-600 hover:bg-purple-700 transition rounded-lg py-3 px-6 font-medium">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="mt-6 bg-purple-600 hover:bg-purple-700 transition rounded-lg py-3 px-6 font-medium"
+          >
             Book a Call
           </button>
         </div>
       </div>
-        {/* Render the Modal */}
+      {/* Render the Modal */}
       <BookingModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

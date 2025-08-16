@@ -15,12 +15,14 @@ export default function PrivacyPolicyPage() {
               1. INTRODUCTION
             </h2>
             <p>
-              V4Labs ("we," "us," "our") is committed to protecting your privacy
-              and personal data. This Privacy Policy explains how we collect,
-              use, store, and protect your information in compliance with the
-              Digital Personal Data Protection Act, 2023 ("DPDP Act") and other
-              applicable Indian data protection laws.
+              V4Labs (&quot;we,&quot; &quot;us,&quot; &quot;our&quot;) is
+              committed to protecting your privacy and personal data. This
+              Privacy Policy explains how we collect, use, store, and protect
+              your information in compliance with the Digital Personal Data
+              Protection Act, 2023 (&quot;DPDP Act&quot;) and other applicable
+              Indian data protection laws.
             </p>
+
             <p className="mt-2">
               <strong>Contact Information:</strong> services@v4labs.tech
             </p>
@@ -30,11 +32,21 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-2xl font-semibold text-white mb-3">
               2. INFORMATION WE COLLECT
             </h2>
-            <p className="mb-2">We may collect the following categories of information:</p>
+            <p className="mb-2">
+              We may collect the following categories of information:
+            </p>
             <ul className="list-disc list-inside space-y-1">
-              <li>Personal Information (e.g., name, email, phone, billing info)</li>
-              <li>Technical Information (e.g., IP, device/browser details, usage data)</li>
-              <li>Information from Third Parties (e.g., payment processors, integrations)</li>
+              <li>
+                Personal Information (e.g., name, email, phone, billing info)
+              </li>
+              <li>
+                Technical Information (e.g., IP, device/browser details, usage
+                data)
+              </li>
+              <li>
+                Information from Third Parties (e.g., payment processors,
+                integrations)
+              </li>
             </ul>
           </section>
 

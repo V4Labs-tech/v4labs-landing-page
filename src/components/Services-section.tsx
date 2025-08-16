@@ -7,12 +7,15 @@ import { useState } from "react";
 import BookingModal from "./ui/BookingModal";
 
 export default function ServicesSection() {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const calUsername = "v4labs";
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const calUsername = "v4labs";
   return (
     <>
       {/* Section 1: Introductory text without the dotted background */}
-      <section className="w-full pt-14  md:px-6 flex flex-col items-center mb-14 md:mb-0 " id="about" >
+      <section
+        className="w-full pt-14  md:px-6 flex flex-col items-center mb-14 md:mb-0 "
+        id="about"
+      >
         <p className="text-center text-2xl max-w-4xl text-gray-300">
           We turn your ideas into launch-ready MVPs in just weeks, not months.
           Affordable, scalable, and fully managed — so you can grow without
@@ -21,8 +24,8 @@ export default function ServicesSection() {
       </section>
 
       {/* Section 2: The rest of the content with the dotted background */}
-        <section className="w-full pt-8  px-6 flex flex-col items-center mb-30 md:mb-0">
-      <DotBackground>
+      <section className="w-full pt-8  px-6 flex flex-col items-center mb-30 md:mb-0">
+        <DotBackground>
           {/* Steps Section */}
           <h2 className="m-10 mt-30 md:mt-0 text-2xl font-semibold text-center text-white z-10">
             From Idea to MVP — In Just 3 Weeks
@@ -45,15 +48,15 @@ export default function ServicesSection() {
               </div>
 
               <button
-              onClick={() => setIsModalOpen(true)}
-              className="bg-primary w-32 text-gray-800 px-6 py-3 mt-6 rounded-full text-md font-semibold shadow-lg hover:shadow-xl transition  bottom-20 cursor-pointer  md:m-10 md:z-10"
-            >
-              Book a call
-            </button>
+                onClick={() => setIsModalOpen(true)}
+                className="bg-primary w-32 text-gray-800 px-6 py-3 mt-6 rounded-full text-md font-semibold shadow-lg hover:shadow-xl transition  bottom-20 cursor-pointer  md:m-10 md:z-10"
+              >
+                Book a call
+              </button>
             </div>
           </div>
-      </DotBackground>
-        </section>
+        </DotBackground>
+      </section>
 
       <ServicesSection2 />
 
