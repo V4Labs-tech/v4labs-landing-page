@@ -18,7 +18,7 @@ const PricingSection = () => {
 
       <div className="flex flex-col md:flex-row justify-center gap-10 mt-6">
         {/* Basic Plan */}
-        <div className="rounded-2xl h-[80vh] w-full md:w-[320px] backdrop-blur-md bg-white/5 shadow-lg border border-white/10 flex flex-col justify-between p-6">
+        <div className="rounded-2xl h-[60vh] md:h-[70vh] w-full md:w-[320px] backdrop-blur-md bg-white/5 shadow-lg border border-white/10 flex flex-col justify-between p-6">
           <div>
             <h2 className="text-2xl font-semibold">Basic Plan</h2>
             <p className="text-purple-300 text-3xl font-bold mt-2">$699</p>
@@ -49,7 +49,7 @@ const PricingSection = () => {
         </div>
 
         {/* Standard Plan */}
-        <div className="rounded-2xl h-[85vh] w-full md:w-[340px] backdrop-blur-md bg-gradient-to-b from-purple-800/30 to-purple-500/10 shadow-xl border border-purple-400/20 flex flex-col justify-between p-6 scale-105">
+        <div className="rounded-2xl h-[65vh] md:h-[75vh] w-full md:w-[340px] backdrop-blur-md bg-gradient-to-b from-purple-800/30 to-purple-500/10 shadow-xl border border-purple-400/20 flex flex-col justify-between p-6 scale-105">
           <div>
             <h2 className="text-2xl font-semibold">Standard Plan</h2>
             <p className="text-purple-300 text-3xl font-bold mt-2">
@@ -80,7 +80,7 @@ const PricingSection = () => {
         </div>
 
         {/* Custom Plan */}
-        <div className="rounded-2xl h-[80vh] w-full md:w-[320px] backdrop-blur-md bg-white/5 shadow-lg border border-white/10 flex flex-col justify-between p-6">
+        <div className="rounded-2xl h-[60vh] md:h-[70vh] w-full md:w-[320px] backdrop-blur-md bg-white/5 shadow-lg border border-white/10 flex flex-col justify-between p-6">
           <div>
             <h2 className="text-2xl font-semibold">Custom Plan</h2>
             <p className="text-purple-300 text-3xl font-bold mt-2">Flexible</p>

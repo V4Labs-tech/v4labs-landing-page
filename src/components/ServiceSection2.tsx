@@ -48,7 +48,7 @@ const ServicesSection2 = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl lg:text-3xl font-bold text-center text-white"
+          className="text-3xl lg:text-3xl font-bold text-center text-white mt-4"
         >
           Our Services
         </motion.h1>
