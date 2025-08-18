@@ -1,7 +1,6 @@
 "use client";
 import StepsSection from "../components/ui/Steps-gridItem";
 import { DotBackground } from "./ui/Dotted-Background";
-import Link from "next/link";
 import ServicesSection2 from "./ServiceSection2";
 import { useState } from "react";
 import BookingModal from "./ui/BookingModal";
