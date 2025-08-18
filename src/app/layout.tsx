@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "V4Labs",
     images: [
       {
-        url: "/og-image.png", // place an image in public/ for previews
+        url: "favicon2.png", // place an image in public/ for previews
         width: 1200,
         height: 630,
         alt: "V4Labs - MVP Development & Support",
@@ -56,13 +56,13 @@ export const metadata: Metadata = {
     title: "V4Labs - MVP Development & Startup Support",
     description:
       "Turn your startup idea into a working MVP. Web, mobile, SaaS + monthly support plans. By V4Labs.",
-    images: ["/og-image.png"],
+    images: ["favicon2.png"],
     creator: "@v4labs", // update if you create an X (Twitter) handle
   },
 icons: {
     icon: "/favicon.ico",        // main favicon
-    shortcut: "/favicon.png",    // optional
-    apple: "/favicon.png",       // for Apple devices
+    shortcut: "/favicon2.png",    // optional
+    apple: "/favicon2.png",       // for Apple devices
   },
   metadataBase: new URL("https://v4labs.tech"), // your production domain
 };

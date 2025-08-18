@@ -42,7 +42,7 @@ const PricingSection = () => {
           </div>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="mt-6 bg-purple-600 hover:bg-purple-700 transition rounded-lg py-3 px-6 font-medium"
+            className="mt-6 bg-purple-600 hover:bg-purple-700 transition rounded-lg py-3 px-6 font-medium cursor-pointer"
           >
             Book a Call
           </button>
@@ -73,7 +73,7 @@ const PricingSection = () => {
           </div>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="mt-6 bg-purple-600 hover:bg-purple-700 transition rounded-lg py-3 px-6 font-medium"
+            className="mt-6 bg-purple-600 hover:bg-purple-700 transition rounded-lg py-3 px-6 font-medium cursor-pointer"
           >
             Book a Call
           </button>
@@ -102,7 +102,7 @@ const PricingSection = () => {
           </div>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="mt-6 bg-purple-600 hover:bg-purple-700 transition rounded-lg py-3 px-6 font-medium"
+            className="mt-6 bg-purple-600 hover:bg-purple-700 transition rounded-lg py-3 px-6 font-medium cursor-pointer"
           >
             Book a Call
           </button>
