@@ -44,8 +44,8 @@ const Header = () => {
       <header
         className={`sticky top-0 z-40 w-full transition-all duration-300 ${
           isScrolled
-            ? "bg-[#0B0B0B]/80 backdrop-blur-lg mask-b-from-80%"
-            : "bg-transparent"
+            ? "bg-[#0B0B0B]/80 backdrop-blur-lg border-b border-emerald-700/50 "
+            : "bg-transparent border-b border-transparent"
         }`}
       >
         <div className="px-6 md:px-12 lg:px-24">
