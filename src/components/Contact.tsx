@@ -3,9 +3,16 @@
 import React, { useState } from "react";
 import { BackgroundLines } from "./ui/background-lines";
 
+enum FormStatus {
+  Idle = "IDLE",
+  Sending = "SENDING",
+  Success = "SUCCESS",
+  Error = "ERROR",
+}
+
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState<FormStatus>(FormStatus.Idle);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -16,7 +23,7 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("Sending...");
+    setStatus(FormStatus.Sending);
 
     const res = await fetch("/api/contact", {
       method: "POST",
@@ -25,12 +32,34 @@ const Contact = () => {
     });
 
     if (res.ok) {
-      setStatus("Message sent successfully!");
+      setStatus(FormStatus.Success);
       setForm({ name: "", email: "", message: "" });
     } else {
-      setStatus("Failed to send message. Please try again.");
+      setStatus(FormStatus.Error);
     }
   };
+
+  const renderStatusMessage = () => {
+    switch (status) {
+      case FormStatus.Sending:
+        return <p className="mt-4 text-sm text-gray-400">Sending...</p>;
+      case FormStatus.Success:
+        return (
+          <p className="mt-4 text-sm text-green-400">
+            Message sent successfully!
+          </p>
+        );
+      case FormStatus.Error:
+        return (
+          <p className="mt-4 text-sm text-red-400">
+            Failed to send message. Please try again.
+          </p>
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
     <div
       id="contact"
@@ -54,6 +83,7 @@ const Contact = () => {
             <input
               type="text"
               name="name"
+              required
               placeholder="Your Name"
               value={form.name}
               onChange={handleChange}
@@ -62,6 +92,7 @@ const Contact = () => {
             <input
               type="email"
               name="email"
+              required
               placeholder="Your Email"
               value={form.email}
               onChange={handleChange}
@@ -70,6 +101,7 @@ const Contact = () => {
             <textarea
               placeholder="Your Message"
               name="message"
+              required
               rows={5}
               value={form.message}
               onChange={handleChange}
@@ -77,12 +109,13 @@ const Contact = () => {
             ></textarea>
             <button
               type="submit"
-              className="bg-[#19E09A] text-black py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 cursor-pointer"
+              className={`bg-[#19E09A] disabled:opacity-20 disabled:cursor-not-allowed text-black py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 cursor-pointer `}
+              disabled={status === FormStatus.Sending}
             >
               Send Message
             </button>
           </form>
-          {status && <p className="mt-4 text-sm text-gray-400">{status}</p>}
+           {renderStatusMessage()}
         </div>
       </div>
     </div>
