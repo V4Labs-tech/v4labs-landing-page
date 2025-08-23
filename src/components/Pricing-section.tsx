@@ -3,6 +3,20 @@ import { Check } from "lucide-react";
 import React, { useState } from "react";
 import BookingModal from "./ui/BookingModal";
 
+const Basic = ["MVP Building", "Website", "Mobile App", "AI Tools & Agents"];
+const Standard = [
+  "Everything in Basic",
+  "Feature Development",
+  "Bug Fixes & Updates",
+  "Monitoring & Maintenance",
+];
+const Flexible = [
+  "Everything in Standard",
+  "Tailored to Your Needs",
+  "Custom Features",
+  "Dedicated Support",
+];
+
 const PricingSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const calUsername = "v4labs";
@@ -23,21 +37,13 @@ const PricingSection = () => {
             <h2 className="text-2xl font-semibold">Basic Plan</h2>
             <p className="text-purple-300 text-3xl font-bold mt-2">$699</p>
             <ul className="text-gray-300 mt-6 space-y-2 text-left">
-              <li className="flex gap-3">
-                <Check /> MVP Building
-              </li>
-              <li className="flex gap-3">
-                <Check />
-                Website
-              </li>
-              <li className="flex gap-3">
-                <Check />
-                Mobile App
-              </li>
-              <li className="flex gap-3">
-                <Check />
-                AI Tools & Agents
-              </li>
+              {Basic.map((item) => {
+                return (
+                  <li className="flex gap-3">
+                    <Check strokeWidth={4} /> {item}
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <button
@@ -56,19 +62,13 @@ const PricingSection = () => {
               $699 + $299/mo
             </p>
             <ul className="text-gray-300 mt-6 space-y-2 text-left">
-              <li className="flex gap-3">
-                <Check /> Everything in Basic
-              </li>
-              <li className="flex gap-3">
-                <Check /> Feature Development
-              </li>
-              <li className="flex gap-3">
-                <Check />
-                Bug Fixes & Updates
-              </li>
-              <li className="flex gap-3">
-                <Check /> Monitoring & Maintenance
-              </li>
+              {Standard.map((item) => {
+                return (
+                  <li className="flex gap-3">
+                    <Check strokeWidth={4} /> {item}
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <button
@@ -85,19 +85,13 @@ const PricingSection = () => {
             <h2 className="text-2xl font-semibold">Custom Plan</h2>
             <p className="text-purple-300 text-3xl font-bold mt-2">Flexible</p>
             <ul className="text-gray-300 mt-6 space-y-2 text-left">
-              <li className="flex gap-3">
-                <Check /> Tailored to Your Needs
-              </li>
-              <li className="flex gap-3">
-                <Check /> Custom Features
-              </li>
-              <li className="flex gap-3">
-                <Check /> Dedicated Support
-              </li>
-              <li className="flex gap-3">
-                <Check />
-                Scalable Solutions
-              </li>
+              {Flexible.map((item) => {
+                return (
+                  <li className="flex gap-3">
+                    <Check strokeWidth={4} /> {item}
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <button
