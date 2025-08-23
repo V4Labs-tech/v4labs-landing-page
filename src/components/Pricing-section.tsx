@@ -37,9 +37,9 @@ const PricingSection = () => {
             <h2 className="text-2xl font-semibold">Basic Plan</h2>
             <p className="text-purple-300 text-3xl font-bold mt-2">$699</p>
             <ul className="text-gray-300 mt-6 space-y-2 text-left">
-              {Basic.map((item) => {
+              {Basic.map((item,index) => {
                 return (
-                  <li className="flex gap-3">
+                  <li key={index} className="flex gap-3">
                     <Check strokeWidth={4} /> {item}
                   </li>
                 );
@@ -62,9 +62,9 @@ const PricingSection = () => {
               $699 + $299/mo
             </p>
             <ul className="text-gray-300 mt-6 space-y-2 text-left">
-              {Standard.map((item) => {
+              {Standard.map((item,index) => {
                 return (
-                  <li className="flex gap-3">
+                  <li key={index} className="flex gap-3">
                     <Check strokeWidth={4} /> {item}
                   </li>
                 );
@@ -85,9 +85,9 @@ const PricingSection = () => {
             <h2 className="text-2xl font-semibold">Custom Plan</h2>
             <p className="text-purple-300 text-3xl font-bold mt-2">Flexible</p>
             <ul className="text-gray-300 mt-6 space-y-2 text-left">
-              {Flexible.map((item) => {
+              {Flexible.map((item,index) => {
                 return (
-                  <li className="flex gap-3">
+                  <li key={index} className="flex gap-3">
                     <Check strokeWidth={4} /> {item}
                   </li>
                 );
