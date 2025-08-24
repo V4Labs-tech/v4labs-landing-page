@@ -55,19 +55,19 @@ export function Footer() {
       <div className="w-full max-w-6xl">
         <div className=" w-full flex flex-col justify-between gap-4 md:flex-row md:justify-between md:items-start">
           {/* Left: Logo */}
-          <AnimatedContainer className="space-y-4">
+    
             <Link
               href="#"
               className="text-lg font-semibold flex justify-center items-center gap-2"
             >
               <Image src={"/v4labs.svg"} alt="logo" width={36} height={36} />
             </Link>
-          </AnimatedContainer>
+       
 
           {/* Middle Columns */}
           <div className="flex justify-between gap-x-18  w-full md:w-100">
             {footerLinks.map((section, index) => (
-              <AnimatedContainer key={section.label} delay={0.1 + index * 0.1}>
+      
                 <div>
                   <h3 className="text-xs">{section.label}</h3>
                   <ul className="text-muted-foreground mt-4 space-y-2 text-sm">
@@ -84,7 +84,7 @@ export function Footer() {
                     ))}
                   </ul>
                 </div>
-              </AnimatedContainer>
+              
             ))}
           </div>
         </div>
