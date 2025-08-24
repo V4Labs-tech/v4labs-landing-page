@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
-import type { ComponentProps, ReactNode } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaInstagram } from "react-icons/fa";
@@ -30,7 +29,15 @@ const footerLinks: FooterSection[] = [
   {
     label: "Socials",
     links: [
-      { title: <span className="text-muted-foregroun hover:text-primary pl-0.5 ">X</span>, href: "https://x.com/V4Labs", key: "4" },
+      {
+        title: (
+          <span className="text-muted-foregroun hover:text-primary pl-0.5 ">
+            X
+          </span>
+        ),
+        href: "https://x.com/V4Labs",
+        key: "4",
+      },
       {
         title: <FaInstagram size={20} />,
         href: "https://www.instagram.com/v4labs/",
@@ -55,36 +62,33 @@ export function Footer() {
       <div className="w-full max-w-6xl">
         <div className=" w-full flex flex-col justify-between gap-4 md:flex-row md:justify-between md:items-start">
           {/* Left: Logo */}
-    
-            <Link
-              href="#"
-              className="text-lg font-semibold flex justify-center items-center gap-2"
-            >
-              <Image src={"/v4labs.svg"} alt="logo" width={36} height={36} />
-            </Link>
-       
+
+          <Link
+            href="#"
+            className="text-lg font-semibold flex justify-center items-center gap-2"
+          >
+            <Image src={"/v4labs.svg"} alt="logo" width={36} height={36} />
+          </Link>
 
           {/* Middle Columns */}
           <div className="flex justify-between gap-x-18  w-full md:w-100">
             {footerLinks.map((section, index) => (
-      
-                <div>
-                  <h3 className="text-xs">{section.label}</h3>
-                  <ul className="text-muted-foreground mt-4 space-y-2 text-sm">
-                    {section.links.map((link) => (
-                      <li key={link.key}>
-                        <a
-                          href={link.href}
-                          className="hover:text-primary inline-flex items-center transition-all duration-300"
-                        >
-                          {link.icon && <link.icon className="me-1 size-4" />}
-                          {link.title}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              
+              <div key={index}>
+                <h3 className="text-xs">{section.label}</h3>
+                <ul className="text-muted-foreground mt-4 space-y-2 text-sm">
+                  {section.links.map((link) => (
+                    <li key={link.key}>
+                      <a
+                        href={link.href}
+                        className="hover:text-primary inline-flex items-center transition-all duration-300"
+                      >
+                        {link.icon && <link.icon className="me-1 size-4" />}
+                        {link.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </div>
@@ -100,33 +104,33 @@ export function Footer() {
   );
 }
 
-type ViewAnimationProps = {
-  delay?: number;
-  className?: ComponentProps<typeof motion.div>["className"];
-  children: ReactNode;
-};
+// type ViewAnimationProps = {
+//   delay?: number;
+//   className?: ComponentProps<typeof motion.div>["className"];
+//   children: ReactNode;
+// };
 
-function AnimatedContainer({
-  className,
-  delay = 0.1,
-  children,
-}: ViewAnimationProps) {
-  const shouldReduceMotion = useReducedMotion();
+// function AnimatedContainer({
+//   className,
+//   delay = 0.1,
+//   children,
+// }: ViewAnimationProps) {
+//   const shouldReduceMotion = useReducedMotion();
 
-  if (shouldReduceMotion) {
-    // Return a simple div if motion is reduced, maintaining the layout
-    return <div className={className}>{children}</div>;
-  }
+//   if (shouldReduceMotion) {
+//     // Return a simple div if motion is reduced, maintaining the layout
+//     return <div className={className}>{children}</div>;
+//   }
 
-  return (
-    <motion.div
-      initial={{ filter: "blur(4px)", translateY: -8, opacity: 0 }}
-      whileInView={{ filter: "blur(0px)", translateY: 0, opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ delay, duration: 0.8 }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
-}
+//   return (
+//     <motion.div
+//       initial={{ filter: "blur(4px)", translateY: -8, opacity: 0 }}
+//       whileInView={{ filter: "blur(0px)", translateY: 0, opacity: 1 }}
+//       viewport={{ once: true }}
+//       transition={{ delay, duration: 0.8 }}
+//       className={className}
+//     >
+//       {children}
+//     </motion.div>
+//   );
+// }
