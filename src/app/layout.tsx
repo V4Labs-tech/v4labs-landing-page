@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import { Footer } from "@/components/ui/footer-section";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -76,6 +77,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+{/* Google Tag */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-LXBTLDEZBK" />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-LXBTLDEZBK');
+          `}
+          </Script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#040405]`}
       >
