@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     creator: "@v4labs", // update if you create an X (Twitter) handle
   },
 icons: {
-    icon: "/favicon.ico",        // main favicon
+    icon: "/favicon1.ico",        // main favicon
     shortcut: "/favicon2.png",    // optional
     apple: "/favicon2.png",       // for Apple devices
   },
