@@ -1,7 +1,6 @@
-import { Blog, BlogFormData, BlogsProps } from '@/app/dashboard/types';
+import { Blog, BlogsProps } from '@/app/dashboard/types';
 import React, { useState, useEffect } from 'react';
-import Modal from './Modal';
-import BlogForm from './BlogForm';
+import { useRouter } from 'next/navigation'; // Import the router
 import { Edit, Plus, Trash2 } from 'lucide-react';
 
 // Import shadcn/ui components
@@ -20,7 +19,6 @@ const useMediaQuery = (query: string): boolean => {
     const [matches, setMatches] = useState(false);
 
     useEffect(() => {
-        // This code only runs on the client, preventing SSR errors
         if (typeof window !== 'undefined') {
             const media = window.matchMedia(query);
             if (media.matches !== matches) {
@@ -30,42 +28,38 @@ const useMediaQuery = (query: string): boolean => {
             window.addEventListener('resize', listener);
             return () => window.removeEventListener('resize', listener);
         }
-        return () => {};
+        return () => { };
     }, [matches, query]);
 
     return matches;
 };
 
-function Blogs({ blogs, onAdd, onUpdate, onDelete, onView }: BlogsProps) {
-    const [isFormOpen, setIsFormOpen] = useState(false);
-    const [editingBlog, setEditingBlog] = useState<Blog | null>(null);
-    // Check if the screen width is 768px or less
+// Utility to strip HTML tags for a clean preview
+const stripHtml = (html: string) => {
+    if (typeof window !== 'undefined') {
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        return doc.body.textContent || "";
+    }
+    return html; // Return as is during SSR
+};
+
+// MODIFIED: Removed onAdd and onUpdate from props as they are no longer needed here
+function Blogs({ blogs, onDelete, onView }: BlogsProps) {
+    const router = useRouter();
     const isMobile = useMediaQuery('(max-width: 768px)');
 
+    // MODIFIED: This now navigates to the new blog page
     const handleAddClick = () => {
-        setEditingBlog(null);
-        setIsFormOpen(true);
+        router.push('/dashboard/blogs/new');
     };
 
+    // MODIFIED: This now navigates to the dynamic edit page
     const handleEditClick = (blog: Blog) => {
-        setEditingBlog(blog);
-        setIsFormOpen(true);
-    };
-
-    const handleFormSubmit = (blogData: BlogFormData) => {
-        if (editingBlog) {
-            onUpdate({ ...editingBlog, ...blogData });
-        } else {
-            onAdd(blogData);
-        }
-        setIsFormOpen(false);
-        setEditingBlog(null);
+        router.push(`/dashboard/blogs/edit/${blog.id}`);
     };
 
     return (
-        // FIX: Added flex, flex-col, and min-w-0 to ensure proper shrinking and layout
         <div className="animate-fade-in w-full flex flex-col min-w-0">
-            {/* Header: Set to not shrink */}
             <div className="flex-shrink-0 flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-4">
                 <h1 className="text-2xl md:text-3xl font-bold text-white whitespace-nowrap">Blogs</h1>
                 <Button
@@ -77,7 +71,6 @@ function Blogs({ blogs, onAdd, onUpdate, onDelete, onView }: BlogsProps) {
                 </Button>
             </div>
 
-            {/* Responsive Table Container */}
             <div className="rounded-lg border border-gray-800 overflow-x-auto">
                 <Table>
                     <TableHeader>
@@ -95,8 +88,10 @@ function Blogs({ blogs, onAdd, onUpdate, onDelete, onView }: BlogsProps) {
                                 onClick={() => onView(blog)}
                             >
                                 <TableCell className="font-medium text-white whitespace-nowrap">{blog.title}</TableCell>
-                                {/* Conditionally shorten the snippet text on mobile screens */}
-                                <TableCell className="whitespace-nowrap">{blog.content.substring(0, isMobile ? 25 : 70)}...</TableCell>
+                                <TableCell className="whitespace-nowrap">
+                                    {/* MODIFIED: Use stripHtml to show a clean text preview */}
+                                    {stripHtml(blog.content).substring(0, isMobile ? 25 : 70)}...
+                                </TableCell>
                                 <TableCell className="text-right" onClick={e => e.stopPropagation()}>
                                     <div className="flex justify-end gap-2">
                                         <Button variant="ghost" size="icon" onClick={() => handleEditClick(blog)} className="text-gray-400 hover:text-[#0AF5AD] hover:bg-gray-700">
@@ -112,10 +107,7 @@ function Blogs({ blogs, onAdd, onUpdate, onDelete, onView }: BlogsProps) {
                     </TableBody>
                 </Table>
             </div>
-
-            <Modal isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} title={editingBlog ? 'Edit Blog' : 'Add New Blog'}>
-                <BlogForm onSubmit={handleFormSubmit} onCancel={() => setIsFormOpen(false)} initialData={editingBlog} />
-            </Modal>
+            {/* REMOVED: The Modal and BlogForm are no longer rendered here */}
         </div>
     );
 }

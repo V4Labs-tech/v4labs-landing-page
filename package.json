@@ -11,6 +11,8 @@
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
     "@react-three/fiber": "^9.3.0",
+    "@tiptap/extension-image": "^3.3.0",
+    "@tiptap/extension-link": "^3.3.0",
     "@tiptap/react": "^3.3.0",
     "@tiptap/starter-kit": "^3.3.0",
     "@types/three": "^0.179.0",

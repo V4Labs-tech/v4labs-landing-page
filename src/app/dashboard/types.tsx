@@ -53,11 +53,11 @@ export interface DashboardProps {
 }
 
 export interface BlogsProps {
-    blogs: Blog[];
-    onAdd: (blog: BlogFormData) => void;
-    onUpdate: (blog: Blog) => void;
-    onDelete: (id: number) => void;
-    onView: (blog: Blog) => void;
+  blogs: Blog[];
+  onAdd: (blog: BlogFormData) => void;
+  onUpdate: (updatedBlog: Blog) => void;
+  onDelete: (id: number) => void;
+  onView: (blog: Blog) => void;
 }
 
 export interface TestimonialsProps {
