@@ -40,12 +40,12 @@ export const Highlight = ({
           // Base styles for the background element
           "absolute -z-10 h-full w-[90%] rounded-lg",
           // Green gradient for the background
-          "bg-gradient-to-r from-primary to-green-400",
+          "bg-gradient-to-r from-[#989BF4] to-[#CCCEF9] ",
           className
         )}
       />
       {/* The text content sits on top of the animated background */}
-      <span className="text-white">{children}</span>
+      <span className="text-black">{children}</span>
     </span>
   );
 };

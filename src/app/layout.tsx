@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import { Footer } from "@/components/ui/footer-section";
 import Script from "next/script";
+import Header2 from "@/components/Header2";
+import SmoothScrollingProvider from "@/components/ui/SmoothScrollProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -76,7 +78,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning={true} >
       <head>
 {/* Google Tag */}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-LXBTLDEZBK" />
@@ -90,10 +92,10 @@ export default function RootLayout({
           </Script>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#040405]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
-        <Header />
-        {children}
+        <Header2 />
+         <SmoothScrollingProvider>{children}</SmoothScrollingProvider>
         <Footer />
       </body>
     </html>

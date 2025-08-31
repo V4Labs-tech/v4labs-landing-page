@@ -10,11 +10,11 @@ const Header = () => {
   const calUsername = "v4labs";
 
   const navLinks = [
-    { name: "Why Us", href: "#about" },
+    { name: "Home", href: "#" },
     { name: "Services", href: "#services" },
-    // { name: "Our Work", href: "#work" }, // Changed from "Products"
     { name: "Pricing", href: "#pricing" },
-    { name: "Company", href: "#about" },
+    { name: "Blog", href: "/blog" },
+    { name: "Testimonials", href: "#testimonials" },
   ];
 
   // Effect to handle scroll detection
@@ -42,31 +42,37 @@ const Header = () => {
   return (
     <>
       <header
-        className={`sticky top-0 z-40 w-full transition-all duration-300 ${
+        className={`fixed top-0 right-0 left-0  z-40 transition-all bg-transparent border border-gray-700/10 ease-in-out duration-500 ${
           isScrolled
-            ? "bg-[#0B0B0B]/80 backdrop-blur-lg border-b border-emerald-700/50 "
-            : "bg-transparent border-b border-transparent"
+            ? "mt-4 mx-auto w-[calc(100%-30%)] max-w-7xl rounded-full border  border-gray-700/10 bg-white "
+            : "mt-0 mx-auto w-5/6 rounded-full  border-hidden"
         }`}
       >
-        <div className="px-6 md:px-12 lg:px-24">
+        <div
+          className={`px-6  transition-all ease-in-out duration-300 ${
+            isScrolled
+              ? " rounded-full "
+              : " rounded-full"
+          }`}
+        >
           {/* Navbar */}
           <nav className="w-full flex justify-between items-center py-4">
             {/* Left Logo */}
             <Link
               href="#"
-              className="text-lg font-semibold flex justify-center items-center gap-2"
+              className="text-2xl font-extrabold flex justify-center items-center gap-2"
             >
-              <Image src={"/v4labs.svg"} alt="logo" width={36} height={36} />
-              <span className="text-white">V4Labs</span>
+              {/* <Image src={"/v4labs.svg"} alt="logo" width={36} height={36} /> */}
+              <span className="text-gray-900 ">V4Labs</span>
             </Link>
 
             {/* Center Nav Links - Hidden on mobile */}
-            <div className="hidden md:flex gap-8 text-sm text-gray-300">
+            <div className="hidden md:flex gap-8 text-sm font-semibold text-gray-900">
               {navLinks.map((item) => (
                 <Link
                   href={item.href}
                   key={item.name}
-                  className="hover:text-primary transition-colors"
+                  className="hover:text-black transition-colors"
                 >
                   {item.name}
                 </Link>
@@ -76,7 +82,7 @@ const Header = () => {
             {/* Right CTA Button */}
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-primary text-gray-900 px-4 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all cursor-pointer"
+              className="bg-gray-900 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-opacity-80 transition-all cursor-pointer"
             >
               Book a call
             </button>
