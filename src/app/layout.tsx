@@ -79,13 +79,13 @@ export default function RootLayout({
     <html lang="en">
       <head>
 {/* Google Tag */}
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-LXBTLDEZBK" />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-HXPCZ3HFT5" />
         <Script id="google-analytics">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-LXBTLDEZBK');
+            gtag('config', 'G-HXPCZ3HFT5');
           `}
           </Script>
       </head>
