@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import BookingModal from "./ui/BookingModal";
 
-const Header2 = () => {
+const Header3 = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const calUsername = "v4labs";
@@ -42,28 +42,28 @@ const Header2 = () => {
   return (
     <>
       <header
-        className={`fixed top-0 right-0 left-0  z-40 transition-all  border text-white border-gray-700/10 ease-in-out duration-500 ${
+        className={`fixed top-0 right-0 left-0 max-w-7xl  z-40 transition-all  border text-black border-gray-700/10 ease-in-out duration-500 ${
           isScrolled
-            ? "mt-4 mx-auto w-[calc(100%-30%)] max-w-7xl rounded-full border  border-gray-700/10 bg-black  "
+            ? "mt-4 mx-auto w-[calc(100%-30%)] max-w-7xl rounded-full border   border-gray-700/10  bg-white shadow-2xl  "
             : "mt-0 mx-auto w-5/6 rounded-full  border-hidden"
         }`}
       >
         <div
-          className={`px-6  transition-all ease-in-out duration-300 ${
+          className={`px-4  transition-all ease-in-out duration-300 ${
             isScrolled
               ? " rounded-full "
               : " rounded-full"
           }`}
         >
           {/* Navbar */}
-          <nav className="w-full flex justify-between items-center py-4">
+          <nav className="w-full flex justify-between items-center py-2">
             {/* Left Logo */}
             <Link
               href="#"
               className="text-2xl font-extrabold flex justify-center items-center gap-2"
             >
               {/* <Image src={"/v4labs.svg"} alt="logo" width={36} height={36} /> */}
-              <span className=" ">V4Labs</span>
+              <span className="font-montserrat">V4Labs</span>
             </Link>
 
             {/* Center Nav Links - Hidden on mobile */}
@@ -82,7 +82,7 @@ const Header2 = () => {
             {/* Right CTA Button */}
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-[#989BF4]/80 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-opacity-80 transition-all cursor-pointer"
+              className="bg-[#ddc8f8] text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-opacity-80 transition-all cursor-pointer"
             >
               Book a call
             </button>
@@ -100,4 +100,4 @@ const Header2 = () => {
   );
 };
 
-export default Header2;
+export default Header3;

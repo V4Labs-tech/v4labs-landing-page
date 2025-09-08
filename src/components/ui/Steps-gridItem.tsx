@@ -20,7 +20,7 @@ interface GridItemProps {
 export const GridItem = ({ icon, title, description }: GridItemProps) => {
   return (
     <li className="list-none mb-2 w-full">
-      <div className="relative w-full rounded-2xl bg-[#040405] md:rounded-3xl">
+      <div className="relative w-full rounded-2xl bg-[#040405] md:rounded-3xl text-white">
         <GlowingEffect
           spread={40}
           glow={true}
